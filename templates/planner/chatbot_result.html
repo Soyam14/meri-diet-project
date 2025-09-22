@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center">Your AI Generated Diet Plan</h4>
+            </div>
+            <div class="card-body">
+                <p style="white-space: pre-wrap;">{{ plan_details }}</p>
+                <hr>
+                <form action="{% url 'save_chatbot_plan' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="plan_title" value="AI Generated Plan ({{ today_date }})">
+                    <input type="hidden" name="plan_details" value="{{ plan_details }}">
+                    <button type="submit" class="btn btn-primary w-100">Add This Plan to My Diet List</button>
+                </form>
+                 <a href="{% url 'chatbot' %}" class="btn btn-secondary w-100 mt-2">Generate Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

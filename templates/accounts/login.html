@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="auth-container">
+    <div class="card auth-card">
+        <div class="card-body text-center">
+            <i class="fa-solid fa-leaf auth-icon"></i>
+            <h3 class="card-title mb-4">Welcome Back!</h3>
+            
+            <form method="post" class="text-start">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="id_username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="id_password" required>
+                </div>
+                <button type="submit" class="btn btn-gradient w-100">Login</button>
+            </form>
+            <p class="text-center mt-3 small">
+                Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

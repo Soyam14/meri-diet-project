@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">AI Diet Planner</h2>
+                <p class="text-center text-muted">Provide your details for a personalized diet plan.</p>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="age" class="form-label">What is your Age?</label>
+                        <input type="number" class="form-control" id="age" name="age" required min="1" max="100">
+                    </div>
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">What is your Weight (in kg)?</label>
+                        <input type="number" class="form-control" id="weight" name="weight" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="height" class="form-label">What is your Height (in cm)?</label>
+                        <input type="number" class="form-control" id="height" name="height" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">What is your primary goal?</label>
+                        <select class="form-select" name="goal" required>
+                            <option value="loss">Weight Loss</option>
+                            <option value="gain">Weight Gain</option>
+                            <option value="maintain">Maintain Health</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">What is your food preference?</label>
+                        <select class="form-select" name="preference" required>
+                            <option value="veg">Vegetarian</option>
+                            <option value="nonveg">Non-Vegetarian</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+    <label class="form-label">Do you have any of these health conditions? (Optional)</label>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="diabetes" id="diabetes">
+                <label class="form-check-label" for="diabetes">Diabetes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="bp" id="bp">
+                <label class="form-check-label" for="bp">High Blood Pressure</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="thyroid" id="thyroid">
+                <label class="form-check-label" for="thyroid">Thyroid</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="cholesterol" id="cholesterol">
+                <label class="form-check-label" for="cholesterol">High Cholesterol</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="pcos" id="pcos">
+                <label class="form-check-label" for="pcos">PCOS / PCOD</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="conditions" value="kidney" id="kidney">
+                <label class="form-check-label" for="kidney">Kidney Issues</label>
+            </div>
+        </div>
+    </div>
+</div>
+                    <button type="submit" class="btn btn-gradient w-100"><i class="fa-solid fa-robot me-2"></i>Generate Plan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

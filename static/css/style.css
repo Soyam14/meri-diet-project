@@ -1,0 +1,178 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- General Styling & Color Variables --- */
+:root {
+    --primary-color: #28a745;
+    --secondary-color: #17a2b8;
+    --light-gray: #f8f9fa;
+    --dark-text: #343a40;
+    --border-radius: 0.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-text);
+}
+
+/* --- Navbar Styling --- */
+.navbar-brand b {
+    color: var(--primary-color);
+}
+
+/* --- Custom Button Styling --- */
+.btn-gradient {
+    background-image: linear-gradient(to right, #28a745 0%, #20c997 51%, #28a745 100%);
+    color: white;
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: var(--border-radius);
+    padding: 10px 25px;
+    font-weight: 600;
+}
+
+.btn-gradient:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- Homepage Hero Section (UPDATED) --- */
+.hero-section {
+    /* This adds a beautiful, soft diagonal gradient background */
+    background: linear-gradient(135deg, #e9f5ec 0%, #ffffff 100%);
+    padding: 6rem 1.5rem;
+    
+    /* This will center everything inside, including the button */
+    text-align: center; 
+    border-radius: var(--border-radius);
+    margin-bottom: 4rem; /* Adds a little space below the section */
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+/* --- Card Styling --- */
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius);
+}
+
+/* --- Accordion Styling for Diet Plans --- */
+.accordion-button:not(.collapsed) {
+    background-color: #e9f5ec;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* --- Auth Page Styling (Login/Signup) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+}
+.auth-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Form Styling --- */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* --- Clickable Feature Card --- */
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+.feature-card-link .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card-link:hover .card {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* --- How It Works Section --- */
+.how-it-works .step-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e9f5ec;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+/* --- Footer Styling (UPDATED for better visibility) --- */
+.footer {
+    background-color: #212529;
+    color: #d1d1d1; /* Brighter light gray for main text */
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+.footer h5 {
+    color: #ffffff; /* Pure White for headings */
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+.footer p, .footer li {
+    font-size: 0.9rem;
+    color: #d1d1d1; /* Ensure all text is light gray */
+}
+.footer-link {
+    color: #ffffff; /* Pure White for links for max contrast */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.footer-link:hover {
+    color: var(--primary-color); /* Green on hover */
+    padding-left: 5px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #495057;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+.social-icon:hover {
+    background-color: var(--primary-color);
+}
+.footer hr {
+    border-top: 1px solid #495057;
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Browse Pre-made Diet Charts</h2>
+<p>Choose a diet chart that fits your needs and add it to your personal list.</p>
+<hr>
+<div class="row">
+    {% for plan in premade_plans %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ plan.title }}</h5>
+                <p class="card-text plan-details">{{ plan.details|linebreaksbr }}</p>
+            </div>
+            <div class="card-footer">
+                <form action="{% url 'add_premade_plan' plan.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary w-100">Add to My Diet List</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No pre-made diet plans are available at the moment. Please check back later.</p>
+    {% endfor %}
+</div>
+{% endblock %}
