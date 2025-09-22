@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-               <img src="{% static 'images/Logo.png' %}" alt="MERI DIET Logo" width="60" height="60">
+                <img src="{% static 'images/logo.png' %}" alt="MERI DIET Logo" height="40">
             </a>
             <div class="d-flex align-items-center">
                 {% if user.is_authenticated %}
@@ -28,9 +28,6 @@
                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-right-from-bracket me-1"></i> Logout</button>
                     </form>
                 {% else %}
-                    <a href="#About" class="btn btn-sm btn-outline-primary me-2">About us</a><br><br><br>
-                    <a href="#Help" class="btn btn-sm btn-outline-primary me-2">Help</a><br><br><br>
-                    <a href="#contact-info" class="btn btn-sm btn-outline-primary me-2">Contact us</a><br><br><br>
                     <a href="{% url 'login' %}" class="btn btn-sm btn-outline-primary me-2">Login</a>
                     <a href="{% url 'signup' %}" class="btn btn-gradient">Sign Up</a>
                 {% endif %}
@@ -51,16 +48,16 @@
                     <p class="text-muted small">Your trusted partner in achieving health and wellness through personalized nutrition.</p>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4">
-    <h5 class="mb-3">Useful Links</h5>
-    <ul class="list-unstyled">
-        <li><a href="{% url 'support' %}" class="footer-link">Support</a></li>
-        <li><a href="{% url 'privacy_policy' %}" class="footer-link">Privacy Policy</a></li>
-        <li><a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms & Conditions</a></li>
-    </ul>
-</div>
+                    <h5 class="mb-3">Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'support' %}" class="footer-link">Support</a></li>
+                        <li><a href="{% url 'privacy_policy' %}" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="{% url 'terms_and_conditions' %}" class="footer-link">Terms & Conditions</a></li>
+                    </ul>
+                </div>
                 <div class="col-lg-3 col-md-6 mb-4" id="contact-info">
                     <h5 class="mb-3">Contact</h5>
-                     <ul class="list-unstyled text-muted small">
+                     <ul class="list-unstyled">
                         <li><i class="fas fa-home me-2"></i> Mumbai, MH 400001, IN</li>
                         <li><i class="fas fa-envelope me-2"></i> info@meridiet.com</li>
                         <li><i class="fas fa-phone me-2"></i> + 91 234 567 88</li>
@@ -69,10 +66,10 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5 class="mb-3">Follow Us</h5>
                     <div class="d-flex">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a><br>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a><br>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a><br>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a><br>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
