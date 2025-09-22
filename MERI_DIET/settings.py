@@ -2,19 +2,21 @@ from pathlib import Path
 import os
 import dj_database_url
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# This line reads the secret key from Render's environment.
-# It has a default key ONLY for local development.
+# This line safely reads the secret key from Render's environment.
+# It has a default, insecure key to allow your local server to run.
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a-default-secret-key-for-dev')
 
 # This line reads the debug status from Render's environment.
-# It will be False on Render and True on your local PC.
+# It will be False on Render and True on your local PC if not set.
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com']
 
-# --- The rest of your settings.py file is the same ---
+
+# --- The rest of your settings file remains the same ---
 # (INSTALLED_APPS, MIDDLEWARE, DATABASES, etc.)
 
 INSTALLED_APPS = [
