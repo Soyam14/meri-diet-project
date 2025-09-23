@@ -2,17 +2,21 @@ from pathlib import Path
 import os
 import dj_database_url
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# This line safely reads the secret key from Render's environment.
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+# This line reads the debug status from Render's environment.
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+# --- THE FINAL, PERMANENT FIX FOR ALLOWED_HOSTS ---
+# We are explicitly adding your live website's address here.
+ALLOWED_HOSTS = ['meri-diet.onrender.com']
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
