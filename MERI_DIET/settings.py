@@ -11,9 +11,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a-default-secret-key-
 
 # This line reads the debug status from Render's environment.
 # It will be False on Render and True on your local PC if not set.
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # --- The rest of your settings file remains the same ---
