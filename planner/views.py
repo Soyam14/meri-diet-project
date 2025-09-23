@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import DietPlan, PreMadePlan
@@ -156,3 +157,7 @@ def privacy_policy_view(request):
 
 def support_view(request):
     return render(request, 'planner/support.html')
+
+def debug_view(request):
+    headers = {key: value for key, value in request.headers.items()}
+    return JsonResponse(headers)

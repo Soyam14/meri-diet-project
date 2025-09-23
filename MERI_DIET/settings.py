@@ -9,11 +9,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # This line reads the debug status from Render's environment.
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
 # --- THE FINAL, PERMANENT FIX FOR ALLOWED_HOSTS ---
 # We are explicitly adding your live website's address here.
-ALLOWED_HOSTS = ['meri-diet.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
