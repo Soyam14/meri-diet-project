@@ -6,9 +6,14 @@
         <p class="lead col-md-8 mx-auto">Harness the power of AI to generate personalized diet plans or choose from expert-curated charts to achieve your health goals faster.
             <strong>Why wait?</strong> Every step you take today brings you closer to a healthier, happier you. Start your transformation with personalized guidance and expert support—your best self is just a plan away!
          </p>
-        <a href="{% url 'signup' %}" class="btn btn-gradient btn-lg mt-3">
-            <i class="fa-solid fa-rocket me-2"></i> GET STARTED
-        </a>
+        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup' %}{% endif %}" class="btn btn-gradient btn-lg mt-3">
+    <i class="fa-solid fa-rocket me-2"></i> 
+    {% if user.is_authenticated %}
+        Go to Dashboard
+    {% else %}
+        GET STARTED
+    {% endif %}
+</a>
     </div>
 </div>
 

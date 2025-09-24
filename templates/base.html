@@ -15,25 +15,27 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="{% static 'images/logo.png' %}" alt="MERI DIET Logo" height="40">
-            </a>
-            <div class="d-flex align-items-center">
-                {% if user.is_authenticated %}
-                    <a href="{% url 'plans_list' %}" class="btn btn-sm btn-outline-secondary me-2"><i class="fa-solid fa-list-ul me-1"></i> Browse Plans</a>
-                    <a href="{% url 'dashboard' %}" class="btn btn-sm btn-outline-primary me-2"><i class="fa-solid fa-book-bookmark me-1"></i> My Diet List</a>
-                    <form action="{% url 'logout' %}" method="post" class="d-inline">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-right-from-bracket me-1"></i> Logout</button>
-                    </form>
-                {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-sm btn-outline-primary me-2">Login</a>
-                    <a href="{% url 'signup' %}" class="btn btn-gradient">Sign Up</a>
-                {% endif %}
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'images/logo.png' %}" alt="MERI DIET Logo" height="40">
+        </a>
+        <div class="d-flex align-items-center">
+            <a href="{% url 'support' %}" class="btn btn-sm btn-link text-secondary me-2">Support</a>
+            <a href="{% url 'terms_and_conditions' %}" class="btn btn-sm btn-link text-secondary me-2">Terms</a>
+            
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" class="btn btn-sm btn-outline-primary me-2"><i class="fa-solid fa-book-bookmark me-1"></i> My Diet List</a>
+                <form action="{% url 'logout' %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-right-from-bracket me-1"></i> Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-sm btn-outline-primary me-2">Login</a>
+                <a href="{% url 'signup' %}" class="btn btn-gradient">Sign Up</a>
+            {% endif %}
         </div>
-    </nav>
+    </div>
+</nav>
 
     <main class="container my-5">
         {% block content %}
