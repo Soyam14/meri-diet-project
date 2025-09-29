@@ -3,110 +3,22 @@
 <div class="hero-section mb-5">
     <div class="container">
         <h1 class="display-4">Craft Your Perfect Diet, Your Way</h1>
-        <p class="lead col-md-8 mx-auto">Harness the power of AI to generate personalized diet plans or choose from expert-curated charts to achieve your health goals faster.
-            <strong>Why wait?</strong> Every step you take today brings you closer to a healthier, happier you. Start your transformation with personalized guidance and expert support—your best self is just a plan away!
-         </p>
-        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup' %}{% endif %}" class="btn btn-gradient btn-lg mt-3">
-    <i class="fa-solid fa-rocket me-2"></i> 
-    {% if user.is_authenticated %}
-        Go to Dashboard
-    {% else %}
-        GET STARTED
-    {% endif %}
-</a>
+        <p class="lead col-md-8 mx-auto">Harness the power of AI to generate personalized diet plans or choose from expert-curated charts to achieve your health goals faster.</p>
+        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup_choice' %}{% endif %}" class="btn btn-gradient btn-lg mt-3">
+            <i class="fa-solid fa-rocket me-2"></i>
+            {% if user.is_authenticated %}
+                Go to Dashboard
+            {% else %}
+                GET STARTED
+            {% endif %}
+        </a>
     </div>
 </div>
 
 <h2 class="text-center mb-4">Features to Fuel Your Journey</h2>
 <div class="row text-center">
-    <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'chatbot' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
-            <div class="card h-100 p-4">
-                <i class="fa-solid fa-robot fa-3x text-success mb-3"></i>
-                <h4>AI Personalization</h4>
-                <p>Our intelligent chatbot analyzes your health data to create a diet plan uniquely tailored to you.
-                    <span class="d-block mt-2 text-muted">
-                        Unlock your potential with our AI chatbot—personalized guidance, actionable insights, and smarter choices for a healthier you.
-                    </span>
-                </p>
-            </div>
-        </a>
-    </div> 
-    <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'plans_list' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
-            <div class="card h-100 p-4">
-                <i class="fa-solid fa-clipboard-list fa-3x text-info mb-3"></i>
-                <h4>Expert Plans</h4>
-                <p>Browse a library of pre-made diet charts designed by experts for various goals.
-                    <span class="d-block mt-2 text-muted">
-                        Discover expertly crafted diet plans for every lifestyle—balanced, effective, and easy to follow for lasting health results.
-                    </span>
-                </p>
-            </div>
-        </a>
     </div>
-    <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
-            <div class="card h-100 p-4">
-                <i class="fa-solid fa-list-check fa-3x text-warning mb-3"></i>
-                <h4>Easy Management</h4>
-                <p>Save and manage all your favorite diet plans in one convenient, organized dashboard.
-                    <span class="d-block mt-2 text-muted">
-                        Stay on track with your health goals—manage, track, and update your diet plans effortlessly in one convenient dashboard.
-                    </span>
-                </p>
 
-                </a>
-                </div>
-            </div>
-
-            <section class="benefits-section bg-light py-5" id="About">
-                <h2 class="text-center mb-4">Why Choose Us?</h2>
-                <div class="container">
-                <h2 class="text-center mb-5">Unlock Your Health Potential with Our Platform</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                    <h3>Personalized Diet Plans</h3>
-                    <p>Get a diet plan that's as unique as you are. Our AI considers your specific health data, preferences, and goals to create a tailored roadmap to success.</p>
-                    </div>
-                    <div class="col-md-6">
-                    <h3>Expert Guidance at Your Fingertips</h3>
-                    <p>Access a wealth of knowledge with our expert-designed diet charts. Whether you're looking to lose weight, gain muscle, or simply eat healthier, we've got you covered.</p>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                    <h3>Effortless Tracking and Management</h3>
-                    <p>Our platform makes it easy to track your progress and manage your diet plans. Stay organized, motivated, and on track to achieve your health goals.</p>
-                    </div>
-                    <div class="col-md-6">
-                    <h3>A Healthier, Happier You</h3>
-                    <p>By using our website, you're not just getting a diet plan – you're investing in your health and well-being. Start your journey today and discover the transformative power of personalized nutrition.</p>
-                    </div>
-                </div>
-                </div>
-            </section>
-
-            <div class="how-it-works text-center py-5" id="Help">
-                <h2 class="mb-5">Get Started in 3 Simple Steps</h2>
-                <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="step-icon">1</div>
-                    <h4>Create Your Account</h4>
-                    <p>Sign up for free and tell us a little bit about yourself and your health goals.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="step-icon">2</div>
-                    <h4>Get Your Diet Plan</h4>
-                    <p>Use our AI chatbot for a custom plan or browse and select from our expert-made diet charts.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="step-icon">3</div>
-                    <h4>Track Your Progress</h4>
-                    <p>Follow your saved plans, stay consistent, and take the first step towards a healthier you!</p>
-        </div>
-    </div>
-</div>
 
 <div class="py-5">
     <h2 class="text-center mb-5">Plans to Fit Your Needs</h2>
@@ -143,7 +55,7 @@
                         <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i>Access to MERI DIET Wallet</li>
                         <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i>Priority Support</li>
                     </ul>
-                    <a href="#" class="btn btn-lg btn-success w-100">Go Premium</a>
+                    <a href="{% url 'signup_choice' %}" class="btn btn-lg btn-success w-100">Go Premium</a>
                 </div>
             </div>
         </div>
