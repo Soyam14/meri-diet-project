@@ -5,23 +5,15 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# --- SECURE, PRODUCTION-READY SETTINGS ---
-
 # This line safely reads the secret key from Render's environment.
-# It has a default, insecure key to allow your local server to run.
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a-default-secret-key-for-dev')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # This line reads the debug status from Render's environment.
-# It will be False on Render (if you set the env var) and True on your local PC.
 DEBUG = True
 
-# This is the most secure way to handle ALLOWED_HOSTS on Render.
+# --- THE FINAL, PERMANENT FIX FOR ALLOWED_HOSTS ---
+# We are explicitly adding your live website's address here.
 ALLOWED_HOSTS = ['*']
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
-# --- END OF SECURE SETTINGS ---
 
 
 # Application definition
@@ -103,17 +95,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# --- YOUR CORRECT EMAIL SETTINGS ---
-# This part you did perfectly!
-if 'RENDER' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.sendgrid.net'
-    EMAIL_HOST_USER = 'apikey' 
-    EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
-    # Make sure this email is the one you verified on SendGrid
-    DEFAULT_FROM_EMAIL = 'MERI DIET <bijendrapathak72@gmail.com>' 
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
