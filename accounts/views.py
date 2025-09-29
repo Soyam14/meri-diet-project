@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.db import transaction
 from .forms import CustomSignUpForm
+from .models import Profile, User
 
 @transaction.atomic
 def signup_view(request):
@@ -11,7 +12,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home') 
+            return redirect('home') # Redirect to homepage after signup
     else:
         form = CustomSignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})
@@ -22,7 +23,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home') 
+            return redirect('home') # Redirect to homepage after login
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
@@ -30,4 +31,4 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('home')
+    return redirect('home')
