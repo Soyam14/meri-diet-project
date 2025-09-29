@@ -6,7 +6,7 @@
         <p class="lead col-md-8 mx-auto">Harness the power of AI to generate personalized diet plans or choose from expert-curated charts to achieve your health goals faster.
             <strong>Why wait?</strong> Every step you take today brings you closer to a healthier, happier you. Start your transformation with personalized guidance and expert support—your best self is just a plan away!
          </p>
-        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup_choice' %}{% endif %}" class="btn btn-gradient btn-lg mt-3">
+        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup' %}{% endif %}" class="btn btn-gradient btn-lg mt-3">
     <i class="fa-solid fa-rocket me-2"></i> 
     {% if user.is_authenticated %}
         Go to Dashboard
@@ -20,7 +20,7 @@
 <h2 class="text-center mb-4">Features to Fuel Your Journey</h2>
 <div class="row text-center">
     <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'chatbot' %}{% else %}{% url 'signup_choice' %}{% endif %}" class="feature-card-link">
+        <a href="{% if user.is_authenticated %}{% url 'chatbot' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
             <div class="card h-100 p-4">
                 <i class="fa-solid fa-robot fa-3x text-success mb-3"></i>
                 <h4>AI Personalization</h4>
@@ -33,7 +33,7 @@
         </a>
     </div> 
     <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'plans_list' %}{% else %}{% url 'signup_choice' %}{% endif %}" class="feature-card-link">
+        <a href="{% if user.is_authenticated %}{% url 'plans_list' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
             <div class="card h-100 p-4">
                 <i class="fa-solid fa-clipboard-list fa-3x text-info mb-3"></i>
                 <h4>Expert Plans</h4>
@@ -46,7 +46,7 @@
         </a>
     </div>
     <div class="col-md-4 mb-4">
-        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup_choice' %}{% endif %}" class="feature-card-link">
+        <a href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'signup' %}{% endif %}" class="feature-card-link">
             <div class="card h-100 p-4">
                 <i class="fa-solid fa-list-check fa-3x text-warning mb-3"></i>
                 <h4>Easy Management</h4>
