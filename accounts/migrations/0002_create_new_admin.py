@@ -7,7 +7,7 @@ def create_superuser(apps, schema_editor):
     # --- CHANGE YOUR NEW ADMIN DETAILS HERE ---
     if not User.objects.filter(username='AMIN@14').exists():
         User.objects.create_superuser(
-            username='ADMIN@14',
+            username='ADMIN@11',
             email='zues60860@gmail.com',
             password='Soyam@14'
         )
