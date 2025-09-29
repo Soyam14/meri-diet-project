@@ -6,13 +6,14 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # This line safely reads the secret key from Render's environment.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# It has a default, insecure key to allow your local server to run.
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a-default-secret-key-for-dev')
 
 # This line reads the debug status from Render's environment.
+# It will be False on Render (if you set the env var) and True on your local PC.
 DEBUG = True
 
-# --- THE FINAL, PERMANENT FIX FOR ALLOWED_HOSTS ---
-# We are explicitly adding your live website's address here.
+# The final, permanent fix for ALLOWED_HOSTS
 ALLOWED_HOSTS = ['*']
 
 
