@@ -13,10 +13,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a-default-secret-key-
 
 # This line reads the debug status from Render's environment.
 # It will be False on Render (if you set the env var) and True on your local PC.
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = True
 
 # This is the most secure way to handle ALLOWED_HOSTS on Render.
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
