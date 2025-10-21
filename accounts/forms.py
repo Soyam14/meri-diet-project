@@ -29,9 +29,6 @@ class CustomSignUpForm(forms.ModelForm):
             email=self.cleaned_data['email'],
             password=self.cleaned_data['password']
         )
-        if commit:
-            Profile.objects.create(
-                user=user,
-                phone_number=self.cleaned_data['phone_number']
-            )
+        # This part of the save method is no longer needed here,
+        # as it's handled in the view. We can simplify it.
         return user
