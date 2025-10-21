@@ -1,3 +1,4 @@
+# accounts/forms.py
 from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
@@ -16,10 +17,8 @@ class CustomSignUpForm(forms.ModelForm):
         cleaned_data = super().clean()
         password = cleaned_data.get("password")
         confirm_password = cleaned_data.get("confirm_password")
-
         if password != confirm_password:
             raise forms.ValidationError("Passwords do not match!")
-            
         if User.objects.filter(email=cleaned_data.get('email')).exists():
             raise forms.ValidationError("An account with this email already exists.")
 
@@ -29,6 +28,4 @@ class CustomSignUpForm(forms.ModelForm):
             email=self.cleaned_data['email'],
             password=self.cleaned_data['password']
         )
-        # This part of the save method is no longer needed here,
-        # as it's handled in the view. We can simplify it.
         return user
